@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Table(name = "slip")
 public class Slip {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(length = 4)
     private int id_slip;
     @Column(length = 32)
@@ -24,4 +24,6 @@ public class Slip {
     private int salary_over;
     @Column(length = 8)
     private int salary_final;
+    @Column(nullable = true)
+    private Integer id_emp;
 }

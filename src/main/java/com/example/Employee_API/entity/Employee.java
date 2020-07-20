@@ -24,7 +24,7 @@ public class Employee {
     @Column(length = 32)
     private String password;
     @Column(length = 40)
-    private String TTL;
+    private String ttl;
     @Column(length = 32)
     private String position;
     @Column(length = 8)
@@ -32,9 +32,73 @@ public class Employee {
 
     @OneToMany(targetEntity = Overtime.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "id_emp", referencedColumnName = "id_employee")
-    private List<Overtime> overtimes;
+    private List<Overtime> overtime;
 
     @OneToMany(targetEntity = Slip.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "id_emp", referencedColumnName = "id_employee")
-    private List<Slip> slips;
+    private List<Slip> slip;
+
+    public int getId_employee() {
+        return id_employee;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public String getTtl() {
+        return ttl;
+    }
+
+    public void setId_employee(int id_employee) {
+        this.id_employee = id_employee;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
+    public void setTtl(String ttl) {
+        this.ttl = ttl;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public List<Overtime> getOvertime() {
+        return overtime;
+    }
+
+    public List<Slip> getSlip() {
+        return slip;
+    }
 }
