@@ -18,9 +18,9 @@ public class Overtime {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(length = 8)
     private int id_overtime;
-    @Column(length = 32)
+    @Column
     private Date time_start;
-    @Column(length = 32)
+    @Column
     private Date time_end;
     private String report_text;
     @Column(nullable = true)
