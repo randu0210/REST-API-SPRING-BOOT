@@ -13,9 +13,24 @@ public class EmpService {
     @Autowired
     private EmpRepository empRepository;
 
+
     public List<Employee> getEmployee(){return empRepository.findAll();}
     public Employee getEmployeeById(int id){
         return empRepository.findById(id).orElse(null);
+    }
+    public String deleteEmployee(int id_employee){
+        empRepository.deleteById(id_employee);
+        return "employee remove";
+    }
+    public Employee updateEmployee(Employee employee){
+        Employee existingEmployee = empRepository.findById(employee.getId_employee()).orElse(null);
+        existingEmployee.setId_employee(employee.getId_employee());
+        existingEmployee.setName(employee.getName());
+        existingEmployee.setUsername(employee.getUsername());
+        existingEmployee.setPassword(employee.getPassword());
+        existingEmployee.setTtl(employee.getTtl());
+        existingEmployee.setSalary(employee.getSalary());
+        return empRepository.save(existingEmployee);
     }
 
 }

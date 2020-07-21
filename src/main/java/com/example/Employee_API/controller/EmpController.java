@@ -34,11 +34,24 @@ public class EmpController {
     @GetMapping("/getDataEmployeeByName/{username}")
     private List<Employee> getDataEmployeeByName(@PathVariable String username){ return empRepository.getDataEmployeeByName(username); }
 
+    @GetMapping("/getEmployeeByPosition/{position}")
+    private List<Employee> getEmployeeByPosition(@PathVariable String position){return empRepository.getDataEmployeeByPosition(position);}
+
+    @DeleteMapping("/delete/{id_employee}")
+    public String deleteEmployeeById(@PathVariable int id_employee){
+        return empService.deleteEmployee(id_employee);
+    }
+
     @GetMapping("/getEmployee")
     public List<Employee> findAllEmployee(){return empService.getEmployee();}
 
     @GetMapping("/getEmployeeById/{id}")
     public Employee findEmployeeById(@PathVariable int id){ return empService.getEmployeeById(id); }
+
+    @PutMapping("/updateEmployee")
+    public  Employee updateEmployee(@RequestBody  Employee  employee){
+        return empService.updateEmployee(employee);
+    }
 
     @PostMapping("/auth")
     public loginResponse authenticate(@RequestBody loginRequest loginRequest) {

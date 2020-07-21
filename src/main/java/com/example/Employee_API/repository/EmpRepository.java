@@ -13,10 +13,13 @@ public interface EmpRepository extends JpaRepository<Employee, Integer> {
 //            "FROM Employee a JOIN a.overtime b ")
 //    public List<DTOResponse> getAllDataEmployee();
     Employee findByUsername(String username);
+    Employee findByPosition(String position);
 //
 //    @Query("SELECT u FROM Employee AS u")
 //    public List<Employee> getDataEmployee();
 //
     @Query("SELECT u FROM Employee AS u where u.username=:username")
     public List<Employee> getDataEmployeeByName(@Param("username") String username);
+    @Query("SELECT u FROM Employee AS u where u.position=:position")
+    public List<Employee> getDataEmployeeByPosition(@Param("position") String position);
 }
