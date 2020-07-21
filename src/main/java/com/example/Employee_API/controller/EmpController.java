@@ -30,8 +30,16 @@ public class EmpController {
     public Employee addEmployee(@RequestBody EmpRequest empRequest){
             return empRepository.save(empRequest.getEmployee());
     }
+
+    @GetMapping("/getDataEmployeeByName/{username}")
+    private List<Employee> getDataEmployeeByName(@PathVariable String username){ return empRepository.getDataEmployeeByName(username); }
+
     @GetMapping("/getEmployee")
     public List<Employee> findAllEmployee(){return empService.getEmployee();}
+
+    @GetMapping("/getEmployeeById/{id}")
+    public Employee findEmployeeById(@PathVariable int id){ return empService.getEmployeeById(id); }
+
     @PostMapping("/auth")
     public loginResponse authenticate(@RequestBody loginRequest loginRequest) {
         try {

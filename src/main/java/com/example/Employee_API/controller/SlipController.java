@@ -22,7 +22,7 @@ public class SlipController {
     }
 
     @GetMapping("/getHistoryById/{id}")
-    public List<Slip> getHistoryById(@PathVariable Integer id) {
+    public List<Slip> getSlipById(@PathVariable Integer id) {
         return history.getSlipById(id);
     }
 }

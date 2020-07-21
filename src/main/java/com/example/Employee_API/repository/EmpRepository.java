@@ -17,6 +17,6 @@ public interface EmpRepository extends JpaRepository<Employee, Integer> {
 //    @Query("SELECT u FROM Employee AS u")
 //    public List<Employee> getDataEmployee();
 //
-//    @Query("SELECT u FROM Employee AS u where u.username=:username")
-//    public List<Employee> getDataEmployeeByName(@Param("username") String username);
+    @Query("SELECT u FROM Employee AS u where u.username=:username")
+    public List<Employee> getDataEmployeeByName(@Param("username") String username);
 }

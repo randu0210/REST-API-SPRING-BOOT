@@ -14,5 +14,8 @@ public class EmpService {
     private EmpRepository empRepository;
 
     public List<Employee> getEmployee(){return empRepository.findAll();}
+    public Employee getEmployeeById(int id){
+        return empRepository.findById(id).orElse(null);
+    }
 
 }
