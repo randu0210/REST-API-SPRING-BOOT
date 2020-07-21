@@ -2,7 +2,7 @@ package com.example.Employee_API.util;
 
 import com.example.Employee_API.dto.loginResponse;
 import com.example.Employee_API.entity.Employee;
-import com.example.Employee_API.repository.EmployeeRepository;
+import com.example.Employee_API.repository.EmpRepository;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -22,7 +22,7 @@ public class JWTUtil {
     Date now = new Date(System.currentTimeMillis());
     Date expiryDate = new Date(now.getTime()+EXPIRATION_TIME);
     @Autowired
-    private EmployeeRepository userRepository;
+    private EmpRepository userRepository;
 
     public loginResponse generateToken(String username) {
         Employee user = userRepository.findByUsername(username);

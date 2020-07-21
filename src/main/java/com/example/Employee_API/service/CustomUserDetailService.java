@@ -1,7 +1,7 @@
 package com.example.Employee_API.service;
 
 import com.example.Employee_API.entity.Employee;
-import com.example.Employee_API.repository.EmployeeRepository;
+import com.example.Employee_API.repository.EmpRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 @Service
 public class CustomUserDetailService implements UserDetailsService {
     @Autowired
-    private EmployeeRepository userRepository;
+    private EmpRepository userRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
