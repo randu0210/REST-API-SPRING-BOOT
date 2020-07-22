@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Table(name = "slip")
 public class Slip {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(length = 4)
     private int id_slip;
     @Column(length = 32)

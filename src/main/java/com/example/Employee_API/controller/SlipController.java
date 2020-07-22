@@ -1,5 +1,8 @@
 package com.example.Employee_API.controller;
 
+import com.example.Employee_API.dto.OverRequest;
+import com.example.Employee_API.dto.SlipRequest;
+import com.example.Employee_API.entity.Overtime;
 import com.example.Employee_API.entity.Slip;
 import com.example.Employee_API.repository.SlipRepository;
 import com.example.Employee_API.service.SlipService;
@@ -24,5 +27,10 @@ public class SlipController {
     @GetMapping("/getHistoryById/{id}")
     public List<Slip> getSlipById(@PathVariable Integer id) {
         return history.getSlipById(id);
+    }
+
+    @PostMapping("/addSlip")
+    public Slip addSlip(@RequestBody SlipRequest slipRequest){
+        return history.save(slipRequest.getSlip());
     }
 }
