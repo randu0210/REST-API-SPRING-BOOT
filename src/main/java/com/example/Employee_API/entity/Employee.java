@@ -29,6 +29,8 @@ public class Employee {
     private String position;
     @Column(length = 8)
     private int salary;
+    @Column(length = 40)
+    private String join_At;
 
     @OneToMany(targetEntity = Overtime.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "id_emp", referencedColumnName = "id_employee")
@@ -66,6 +68,10 @@ public class Employee {
         return ttl;
     }
 
+    public String getJoin_At() {
+        return join_At;
+    }
+
     public void setId_employee(int id_employee) {
         this.id_employee = id_employee;
     }
@@ -88,6 +94,10 @@ public class Employee {
 
     public void setTtl(String ttl) {
         this.ttl = ttl;
+    }
+
+    public void setJoin_At(String join_At) {
+        this.join_At = join_At;
     }
 
     public void setPosition(String position) {
