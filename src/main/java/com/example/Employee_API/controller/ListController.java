@@ -29,4 +29,7 @@ public class ListController {
     }
     @GetMapping("/getLogOvertime")
     public List<LogOvertime> findAllLog(){return service.getLogOvertime();}
+
+    @GetMapping("/getLogOvertimeById/{id_emp}")
+    private List<LogOvertime> getLogOvertimeById(@PathVariable int id_emp){ return logRepository.getlogOvertimeById(id_emp); }
 }
