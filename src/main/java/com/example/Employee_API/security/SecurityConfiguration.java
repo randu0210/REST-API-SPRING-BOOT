@@ -48,7 +48,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable().authorizeRequests().antMatchers("/addEmployee", "/auth", "/getDataEmployeeByName/**", "/getEmployeeById/**", "/getEmployee","/getDataOvertimeById/**")
+        http.csrf().disable().authorizeRequests().antMatchers("/addEmployee", "/auth", "/getDataEmployeeByName/**", "/getEmployeeById/**", "/getEmployee","/getDataOvertimeById/**","/updateEmployee","/getOvertime")
                 .permitAll().anyRequest().authenticated()
                 .and().exceptionHandling().and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
