@@ -19,12 +19,12 @@ public class SlipController {
     @Autowired
     private SlipRepository history;
 
-    @PostMapping("/addHistory")
-    public Slip addSlip(@RequestBody Slip h) {
-        return service.addSlip(h);
-    }
+//    @PostMapping("/addHistory")
+//    public Slip addSlip(@RequestBody Slip h) {
+//        return service.addSlip(h);
+//    }
 
-    @GetMapping("/getHistoryById/{id}")
+    @GetMapping("/getSlipById/{id}")
     public List<Slip> getSlipById(@PathVariable Integer id) {
         return history.getSlipById(id);
     }

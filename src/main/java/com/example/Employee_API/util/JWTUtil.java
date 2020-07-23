@@ -30,7 +30,7 @@ public class JWTUtil {
         claims.put("username", user.getUsername());
         claims.put("name", user.getName());
         claims.put("position", user.getPosition());
-        claims.put("id_sales", user.getId_employee());
+        claims.put("id_employee", user.getId_employee());
         return createToken(claims, user.getUsername());
     }
 
