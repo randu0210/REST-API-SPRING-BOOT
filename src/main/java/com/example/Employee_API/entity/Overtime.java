@@ -23,6 +23,8 @@ public class Overtime {
     @Column
     private Date time_end;
     private String report_text;
+    @Column(length = 32)
+    private String name;
     @Column(nullable = true)
     private Integer id_emp;
 }
