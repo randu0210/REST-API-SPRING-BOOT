@@ -14,4 +14,8 @@ public class OvertimeService {
     private OvertimeRepository overtimeRepository;
 
     public List<Overtime> getOvertime(){return overtimeRepository.findAll();}
+
+//    public Overtime getOvertimeById(int id_emp){
+//        return overtimeRepository.findByid_emp(id_emp);
+//    }
 }

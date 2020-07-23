@@ -23,6 +23,9 @@ public class OverController {
     @GetMapping("/getOvertime")
     public List<Overtime> findAllEmployee(){return service.getOvertime();}
 
+    @GetMapping("/getDataOvertimeById/{id_emp}")
+    private List<Overtime> getDataOvertimeById(@PathVariable int id_emp){ return overtimeRepository.getDataOvertimeById(id_emp); }
+
     @PostMapping("/addOvertime")
     public Overtime addOvertime(@RequestBody OverRequest overRequest){
         return overtimeRepository.save(overRequest.getOvertime());
