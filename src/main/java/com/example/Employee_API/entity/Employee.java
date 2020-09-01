@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Data
@@ -12,9 +13,9 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "employee")
-public class Employee {
+public class Employee implements Serializable {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, length = 4)
     private int id_employee;
     @Column(length = 32)
